@@ -1,17 +1,21 @@
-  const slider = document.getElementById('autoSlider');
-  let index = 0;
-
-  const cardCount = slider.children.length;
-  const visibleCards = 3;
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("autoSlider");
   const cardWidth = slider.children[0].getBoundingClientRect().width + 30;
 
   function autoSlide() {
-    index++;
-    if (index > cardCount - visibleCards) {
-      index = 0; // Reset to start
-    }
-    slider.style.transform = `translateX(-${index * cardWidth}px)`;
+    slider.style.transition = "transform 0.5s ease-in-out";
+    slider.style.transform = `translateX(-${cardWidth}px)`;
+
+    setTimeout(() => {
+      // Move first child to the end
+      const firstCard = slider.children[0];
+      slider.appendChild(firstCard);
+
+      // Instantly reset position to show the next set of 3 without animation jump
+      slider.style.transition = "none";
+      slider.style.transform = "translateX(0)";
+    }, 500); // Matches the transition duration
   }
 
-  setInterval(autoSlide, 3000); // Slide every 3 seconds
-
+  setInterval(autoSlide, 3000);
+});
