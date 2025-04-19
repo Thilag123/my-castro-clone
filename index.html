@@ -1,45 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Castro</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" href="favicon_converted.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Castro - React Construction Template</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-vimeo-v"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-skype"></i></a>
+      </div>
+      <div class="button-wrapper">
+        <button class="quote-button">GET A QUOTE</button>
+      </div>
+    </nav>
+    <!-- Icon for Castro -->
+    <div class="below-navbar">
+      <div class="logo">
+        <img src="https://castro.jamstacktemplates.dev/assets/img/logo/logo.png" alt="Castro Icon"/>        
+      </div>
+      <!-- Icon for Phone -->
+      <div class="phone-address-container">
+        <div class="info-box">
+          <div class="icon-circle">
+            <img src="./assets/image1/orange phone.png" alt="Phone Icon" />
+          </div>
+          <div class="info-text">
+            <h2>Phone</h2>
+            <span>98 9875 5968 54</span>
+          </div>  
+        </div>
+        <!-- Icon for Address -->
+        <div class="info-box">
+          <div class="icon-circle">
+            <img src="./assets/image1/home.png" alt="Home Icon" />
+          </div>
+          <div class="info-text">
+            <h2>Address</h2>
+            <span>your address goes here</span>
+          </div>
+        </div>
+      </div>      
+    </div>
+    <!--main navbar -->
+    <nav class="main-navbar">
+      <ul class="nav-links">
+        <li>HOME <span class="arrow" style="font-size: 0.6em;">&#9660;</span></li>
+        <li>ABOUT</li>
+        <li>SERVICE <span class="arrow" style="font-size: 0.6em;">&#9660;</span></li>
+        <li>PROJECT <span class="arrow" style="font-size: 0.6em;">&#9660;</span></li>
+        <li>BLOG <span class="arrow" style="font-size: 0.6em;">&#9660;</span></li>
+        <li>CONTACT</li>
+      </ul>
+    </nav>
+    
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to Castro</h1>
-            <p>A modern and sleek website template</p>
-            <a href="#learn-more" class="cta-button">Learn More</a>
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Build Your Dream <br> With Passion</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <button class="hero-btn">GET START</button>
+    </div>
+
+    <!-- Left/Right Arrows -->
+    <div class="arrow-left">&#10094;</div>
+    <div class="arrow-right">&#10095;</div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">↑</div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2 class="section-title">
+      Our Services <span class="roman-decor">I</span>
+    </h2>
+  
+    <div class="slider-wrapper">
+      <div class="slider" id="autoSlider">
+        <div class="service-card"> <!-- 1 -->
+          <img src="./assets/image2/service1.jpg" alt="" />
+          <div class="icon-box brown"><img src="icon1.svg" /></div>
+          <h3>Land Minning</h3>
+          <p>Lorem ipsum dolor sit amet...</p>
+          <a href="#">SEE MORE</a>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="learn-more" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Some details about the company...</p>
+  
+        <div class="service-card"> <!-- 2 -->
+          <img src="./assets/image2/service2.jpg" alt="" />
+          <div class="icon-box dark"><img src="icon2.svg" /></div>
+          <h3>Work Management</h3>
+          <p>Lorem ipsum dolor sit amet...</p>
+          <a href="#">SEE MORE</a>
         </div>
-    </section>
+  
+        <div class="service-card"> <!-- 3 -->
+          <img src="./assets/image2/service3.jpg" alt="" />
+          <div class="icon-box dark"><img src="icon3.svg" /></div>
+          <h3>Material Engineering</h3>
+          <p>Lorem ipsum dolor sit amet...</p>
+          <a href="#">SEE MORE</a>
+        </div>
+  
+        <div class="service-card"> <!-- 4 -->
+          <img src="./assets/image2/service1.jpg" alt="" />
+          <div class="icon-box dark"><img src="icon4.svg" /></div>
+          <h3>New Service</h3>
+          <p>Lorem ipsum dolor sit amet...</p>
+          <a href="#">SEE MORE</a>
+        </div>
+  
+        <!-- Add more cards if needed -->
+      </div>
+    </div>
+  </section>
+  <script src="./Scripts/index.js"></script>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Castro. All Rights Reserved.</p>
-    </footer>
-
-    <script src="scripts.js"></script>
-</body>
+  </body>
 </html>
