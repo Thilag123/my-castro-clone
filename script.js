@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 1,
+    autoplay: {
+      delay: 5000
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.custom-next',
+      prevEl: '.custom-prev'
+    }
+    
+  });  
+
+  //Autoslide
   const slider = document.getElementById("autoSlider");
   const cardWidth = slider.children[0].getBoundingClientRect().width + 30;
 

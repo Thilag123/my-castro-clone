@@ -10,6 +10,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <title>Castro - React Construction Template</title>
   </head>
   <body>
@@ -28,7 +34,10 @@
     <!-- Icon for Castro -->
     <div class="below-navbar">
       <div class="logo">
-        <img src="https://castro.jamstacktemplates.dev/assets/img/logo/logo.png" alt="Castro Icon"/>        
+        <img
+          src="https://castro.jamstacktemplates.dev/assets/img/logo/logo.png"
+          alt="Castro Icon"
+        />
       </div>
       <!-- Icon for Phone -->
       <div class="phone-address-container">
@@ -39,7 +48,7 @@
           <div class="info-text">
             <h2>Phone</h2>
             <span>98 9875 5968 54</span>
-          </div>  
+          </div>
         </div>
         <!-- Icon for Address -->
         <div class="info-box">
@@ -51,81 +60,117 @@
             <span>your address goes here</span>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
     <!--main navbar -->
     <nav class="main-navbar">
       <ul class="nav-links">
-        <li>HOME <span class="arrow" style="font-size: 0.6em;">&#9660;</span></li>
+        <li>
+          HOME <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+        </li>
         <li>ABOUT</li>
-        <li>SERVICE <span class="arrow" style="font-size: 0.6em;">&#9660;</span></li>
-        <li>PROJECT <span class="arrow" style="font-size: 0.6em;">&#9660;</span></li>
-        <li>BLOG <span class="arrow" style="font-size: 0.6em;">&#9660;</span></li>
+        <li>
+          SERVICE <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+        </li>
+        <li>
+          PROJECT <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+        </li>
+        <li>
+          BLOG <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+        </li>
         <li>CONTACT</li>
       </ul>
     </nav>
-    
+
     <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <h1>Build Your Dream <br> With Passion</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
-      <button class="hero-btn">GET START</button>
-    </div>
-
-    <!-- Left/Right Arrows -->
-    <div class="arrow-left">&#10094;</div>
-    <div class="arrow-right">&#10095;</div>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top">↑</div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services">
-    <h2 class="section-title">
-      Our Services <span class="roman-decor">I</span>
-    </h2>
-  
-    <div class="slider-wrapper">
-      <div class="slider" id="autoSlider">
-        <div class="service-card"> <!-- 1 -->
-          <img src="./assets/image2/service1.jpg" alt="" />
-          <div class="icon-box brown"><img src="icon1.svg" /></div>
-          <h3>Land Minning</h3>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <a href="#">SEE MORE</a>
+    <section class="hero">
+      <!-- Swiper Container -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide"
+            style="background-image: url('./assets/image1/bg1.jpg')"
+          ></div>
+          <div
+            class="swiper-slide"
+            style="background-image: url('./assets/image1/bg2.jpg')"
+          ></div>
+          <div
+            class="swiper-slide"
+            style="background-image: url('./assets/image1/bg3.jpg')"
+          ></div>
         </div>
-  
-        <div class="service-card"> <!-- 2 -->
-          <img src="./assets/image2/service2.jpg" alt="" />
-          <div class="icon-box dark"><img src="icon2.svg" /></div>
-          <h3>Work Management</h3>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <a href="#">SEE MORE</a>
-        </div>
-  
-        <div class="service-card"> <!-- 3 -->
-          <img src="./assets/image2/service3.jpg" alt="" />
-          <div class="icon-box dark"><img src="icon3.svg" /></div>
-          <h3>Material Engineering</h3>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <a href="#">SEE MORE</a>
-        </div>
-  
-        <div class="service-card"> <!-- 4 -->
-          <img src="./assets/image2/service1.jpg" alt="" />
-          <div class="icon-box dark"><img src="icon4.svg" /></div>
-          <h3>Power and Energy</h3>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <a href="#">SEE MORE</a>
-        </div>
-  
-        <!-- Add more cards if needed -->
+        <div class="swiper-pagination"></div>
+        <div class="custom-swiper-button custom-prev">&lt;;</div>
+        <div class="custom-swiper-button custom-next">&gt;</div>
       </div>
-    </div>
-  </section>
-  <script src="script.js"></script>
 
+      <div class="hero-overlay">
+        <h1>
+          Build Your Dream <br />
+          With Passion
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod
+          tempor incididunt ut labore et dolore.
+        </p>
+        <button class="hero-btn">GET START</button>
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <div class="scroll-top">↑</div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <h2 class="section-title">
+        Our Services <span class="roman-decor">I</span>
+      </h2>
+
+      <div class="slider-wrapper">
+        <div class="slider" id="autoSlider">
+          <div class="service-card">
+            <!-- 1 -->
+            <img src="./assets/image2/service1.jpg" alt="" />
+            <div class="icon-box brown"><img src="icon1.svg" /></div>
+            <h3>Land Minning</h3>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <a href="#">SEE MORE</a>
+          </div>
+
+          <div class="service-card">
+            <!-- 2 -->
+            <img src="./assets/image2/service2.jpg" alt="" />
+            <div class="icon-box dark"><img src="icon2.svg" /></div>
+            <h3>Work Management</h3>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <a href="#">SEE MORE</a>
+          </div>
+
+          <div class="service-card">
+            <!-- 3 -->
+            <img src="./assets/image2/service3.jpg" alt="" />
+            <div class="icon-box dark"><img src="icon3.svg" /></div>
+            <h3>Material Engineering</h3>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <a href="#">SEE MORE</a>
+          </div>
+
+          <div class="service-card">
+            <!-- 4 -->
+            <img src="./assets/image2/service1.jpg" alt="" />
+            <div class="icon-box dark"><img src="icon4.svg" /></div>
+            <h3>Power and Energy</h3>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <a href="#">SEE MORE</a>
+          </div>
+
+          <!-- Add more cards if needed -->
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    
   </body>
 </html>
