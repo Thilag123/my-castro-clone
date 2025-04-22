@@ -1,22 +1,101 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const swiper = new Swiper('.swiper-container', {
+  const swiper = new Swiper(".swiper-container", {
     loop: true,
     slidesPerView: 1,
     autoplay: {
-      delay: 5000
+      delay: 5000,
     },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
     navigation: {
-      nextEl: '.custom-next',
-      prevEl: '.custom-prev'
-    }
-    
-  });  
+      nextEl: ".custom-next",
+      prevEl: ".custom-prev",
+    },
+  });
 
-  //Autoslide
+  const h1 = document.querySelector(".hero-overlay .slide-down");
+  const p = document.querySelector(".hero-overlay .slide-left");
+
+  function animateOverlay() {
+    // Remove in case it's still there from last time
+    h1.classList.remove("animate-in");
+    p.classList.remove("animate-in");
+
+    // Force reflow to restart animation
+    void h1.offsetWidth;
+
+    // Add animation trigger
+    h1.classList.add("animate-in");
+    p.classList.add("animate-in");
+  }
+
+  swiper.on("slideChangeTransitionStart", () => {
+    // Optional: Remove animations immediately
+    h1.classList.remove("animate-in");
+    p.classList.remove("animate-in");
+  });
+
+  swiper.on("slideChangeTransitionEnd", () => {
+    animateOverlay();
+  });
+
+  // Initial load
+  animateOverlay();
+
+  // Scroll-to-top button logic
+  const scrollTopBtn = document.querySelector(".scroll-top");
+
+  // Show/hide the button based on scroll position
+  function toggleScrollButton() {
+    if (window.scrollY > 0 && !scrollTopBtn.classList.contains("scrolling")) {
+      scrollTopBtn.classList.add("show");
+    } else if (
+      window.scrollY === 0 &&
+      !scrollTopBtn.classList.contains("scrolling")
+    ) {
+      scrollTopBtn.classList.remove("show");
+    }
+  }
+
+  window.addEventListener("scroll", toggleScrollButton);
+
+  // Custom smooth scroll to top with acceleration (ease-in only)
+  function smoothScrollToTop() {
+    const start = window.scrollY;
+    const duration = 1000; // Total scroll time in ms
+    const startTime = performance.now();
+
+    scrollTopBtn.classList.add("scrolling");
+
+    function scrollStep(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Ease-in: slow start, accelerating — no deceleration
+      const ease = Math.pow(progress, 3); // Cubic easing in
+
+      window.scrollTo(0, start * (1 - ease));
+
+      if (progress < 1) {
+        requestAnimationFrame(scrollStep);
+      } else {
+        scrollTopBtn.classList.remove("show");
+        scrollTopBtn.classList.remove("scrolling");
+      }
+    }
+
+    requestAnimationFrame(scrollStep);
+  }
+
+  // Use custom scroll on button click
+  scrollTopBtn.addEventListener("click", smoothScrollToTop);
+
+  // Run once on page load
+  toggleScrollButton();
+
+  //Autoslide for service section
   const slider = document.getElementById("autoSlider");
   const cardWidth = slider.children[0].getBoundingClientRect().width + 30;
 

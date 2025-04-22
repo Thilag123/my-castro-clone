@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -18,14 +20,14 @@ body {
 .social-icons {
   display: flex;
   gap: 17px;
-  margin-left: 90px;  
+  margin-left: 90px;
 }
 
 .social-icons a {
   color: white;
   font-size: 16px;
   text-decoration: none;
-  transition: color 0.3s;    
+  transition: color 0.3s;
 }
 
 .social-icons a:hover {
@@ -60,13 +62,13 @@ body {
   background-color: #f8f8f8; /* Optional: background color for this section */
   padding: 10px 20px; /* Adjust padding as needed */
   margin-top: 10px; /* Space below the navbar */
-}  
+}
 
-.logo{
+.logo {
   margin-left: 6em;
 }
 
- .phone-address-container {
+.phone-address-container {
   display: flex;
   gap: 50px;
   align-items: center;
@@ -139,39 +141,42 @@ body {
 }
 
 /* Hero Section */
-.hero {  
+.hero {
   background-size: cover;
   background-position: center;
   position: relative;
   height: 100vh;
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
+  align-items: center;
+  justify-content: center;
   color: white;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 10;
+  max-width: 600px;
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5); /* dark overlay */
   z-index: 1;
 }
 
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-  text-align: left;
-  max-width: 600px;
-  margin-top: 10em;
-  margin-left: 8em;
-  
-}
-
 .hero-overlay h1 {
   font-size: 70px;
-  margin: 0 0 20px;
+  margin: 0 0 25px;
 }
 
 .hero-overlay p {
@@ -188,35 +193,146 @@ body {
   font-weight: bold;
   cursor: pointer;
   border-radius: 30px;
-}
-
-.hero-btn{
-  margin-top: 3em;
+  margin-top: 2em;
   width: 13.4em;
   height: 4em;
 }
+
 .hero-btn:hover {
-  background-color: white;
-  color: #f25c05;    
+  background-color: #f25c05;
+  color: white;
+  border: none;
 }
 
-/* Scroll to Top */
+/* Initial state */
+.hero-overlay .slide-down,
+.hero-overlay .slide-left {
+  opacity: 0;
+}
+
+/* Animated state */
+.hero-overlay .slide-down.animate-in {
+  animation: slideDownFade 1.6s ease-out forwards;
+}
+
+.hero-overlay .slide-left.animate-in {
+  animation: slideLeftFade 1.6s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Keyframes */
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-25vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftFade {
+  from {
+    opacity: 0;
+    transform: translateX(-100vw); /* Start from the left edge of the screen */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.swiper-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+.custom-swiper-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.custom-prev {
+  left: 4.5em;
+}
+
+.custom-next {
+  right: 4.5em;
+}
+
+.custom-swiper-button:hover {
+  background-color: #f25c05;
+  color: white;
+}
+
+/* Scroll to Top button*/
 .scroll-top {
   position: fixed;
   bottom: 30px;
   right: 30px;
   background-color: #f25c05;
   color: white;
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
+
+  /* Initially hidden below the screen */
+  transform: translateY(100px);
+  opacity: 0;
+  pointer-events: none; /* Prevent clicks when hidden */
 }
 
+/* When scrolled down — slide up */
+.scroll-top.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Services starts here */
 .services {
   padding: 60px 80px;
   background-color: #fff;
@@ -316,82 +432,3 @@ body {
   justify-content: center;
   margin: 10px 0;
 }
-
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.swiper-container {
-  width: 100%;
-  height: 100vh;
-}
-.swiper-slide {
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-}
-
-/* Overlay styling stays the same */
-.hero-overlay {
-  position: absolute;
-  top: 50%;
-  left: 8%;
-  transform: translateY(-50%);
-  color: white;
-  z-index: 10;
-  max-width: 600px;
-}
-
-.hero-btn {
-  padding: 12px 30px;
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 30px;
-  margin-top: 30px;
-}
-
-.hero-btn:hover {
-  background-color: white;
-  color: #f25c05;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  display: none !important;
-}
-
-.custom-swiper-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.custom-prev {
-  left: 30px;
-}
-
-.custom-next {
-  right: 30px;
-}
-
-.custom-swiper-button:hover {
-  background-color: #f25c05;
-  color: white;
-}
-
