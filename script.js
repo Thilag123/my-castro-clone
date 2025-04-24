@@ -5,10 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     autoplay: {
       delay: 5000,
     },
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
     navigation: {
       nextEl: ".custom-next",
       prevEl: ".custom-prev",
@@ -17,24 +13,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const h1 = document.querySelector(".hero-overlay .slide-down");
   const p = document.querySelector(".hero-overlay .slide-left");
+  const herobtn = document.querySelector(".hero-overlay .hero-btn");
 
   function animateOverlay() {
-    // Remove in case it's still there from last time
+    // Remove in case it's still there from last time             
     h1.classList.remove("animate-in");
     p.classList.remove("animate-in");
+    herobtn.classList.remove("animate-in");
 
     // Force reflow to restart animation
     void h1.offsetWidth;
+    void herobtn.offsetWidth;
 
     // Add animation trigger
     h1.classList.add("animate-in");
     p.classList.add("animate-in");
+    herobtn.classList.add("animate-in");
   }
 
   swiper.on("slideChangeTransitionStart", () => {
     // Optional: Remove animations immediately
     h1.classList.remove("animate-in");
     p.classList.remove("animate-in");
+    herobtn.classList.remove("animate-in");
   });
 
   swiper.on("slideChangeTransitionEnd", () => {
@@ -97,22 +98,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //Autoslide for service section
   const slider = document.getElementById("autoSlider");
-  const cardWidth = slider.children[0].getBoundingClientRect().width + 30;
+  const cards = document.querySelectorAll(".service-card");
+  const totalCards = cards.length;
+  const visibleCards = 3;
+  let currentIndex = 0;
 
-  function autoSlide() {
-    slider.style.transition = "transform 0.5s ease-in-out";
-    slider.style.transform = `translateX(-${cardWidth}px)`;
-
-    setTimeout(() => {
-      // Move first child to the end
-      const firstCard = slider.children[0];
-      slider.appendChild(firstCard);
-
-      // Instantly reset position to show the next set of 3 without animation jump
-      slider.style.transition = "none";
-      slider.style.transform = "translateX(0)";
-    }, 500); // Matches the transition duration
+  // Clone the first few cards and append them to the end
+  for (let i = 0; i < visibleCards; i++) {
+    const clone = cards[i].cloneNode(true);
+    slider.appendChild(clone);
   }
 
-  setInterval(autoSlide, 3000);
+  function slideCards() {
+    currentIndex++;
+    slider.style.transition = "transform 0.5s ease-in-out";
+    slider.style.transform = `translateX(-${
+      (100 / visibleCards) * currentIndex
+    }%)`;
+
+    // Reset when reaching the cloned cards
+    if (currentIndex === totalCards) {
+      setTimeout(() => {
+        slider.style.transition = "none";
+        slider.style.transform = "translateX(0)";
+        currentIndex = 0;
+      }, 600); // Wait for animation to complete
+    }
+  }
+  setInterval(slideCards, 3000); // every 3 seconds
+
+  //Dashboard Section
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+
+      // Speed can be adjusted (lower = faster)
+      const speed = 50;
+      const increment = Math.ceil(target / speed);
+
+      if (count < target) {
+        counter.innerText = Math.min(count + increment, target);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+
 });
