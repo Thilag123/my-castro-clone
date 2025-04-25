@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //Autoslide for service section
   const servswiper = new Swiper(".my-slider-container", {
     slidesPerView: 3,
-    spaceBetween: 5,
+    spaceBetween: 12,
     loop: true,
     autoplay: {
       delay: 3000,
