@@ -353,8 +353,8 @@ body {
 .services {
   padding: 60px 80px;
   background-color: #fff;
-  text-align: center;
-  margin-bottom: 3.5rem;
+  text-align: center;  
+  margin-bottom: 3rem;
 }
 
 .section-title {
@@ -365,39 +365,56 @@ body {
   position: relative;
 }
 
-.services-container {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
+.roman-decor {
+  display: block;
+  font-size: 2rem;
+  color: #f44336;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
-.service-card {
-  width: 200px;
+.my-slider-container {
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 1300px;  
+}
+
+.my-slider-track {
+  display: flex;
+  width: max-content;  
+}
+
+.my-slide {  
   text-align: left;
   position: relative;
-  flex: 0 0 calc(100% / 3); /* Show 3 at a time */
-  padding: 0 15px;
   box-sizing: border-box;
+  padding: 10px;
+  cursor: default;  
 }
 
-.service-card img {
-  width: 27em;
-  height: 16em;
+.my-slide img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;  
 }
 
-.service-card a:hover {
-  background-color: #f25c05;
+.my-slide a {
+  font-size: 14px;
+  color: #333;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.service-card h3 {
+.my-slide h3 {
   margin-top: 50px;
   color: #2d2d2d;
+  cursor: pointer;
 }
 
-.service-card p {
+.my-slide p {
   font-size: 16px;
   color: #666;
+  line-height: 1.6;
 }
 
 .icon-box {
@@ -409,6 +426,7 @@ body {
   margin: 15px;
   width: 70px;
   height: 70px;
+  cursor: default;
 }
 
 .icon-box img {
@@ -419,47 +437,11 @@ body {
 .icon-box:hover {
   background-color: #f25c05;
 }
-/* Optional background color classes */
-.brown {
-  background-color: #6b3f2f;
-}
-.dark {
-  background-color: #2b2b2b;
-}
-
-.slider-wrapper {
-  overflow: hidden;
-  display: flex;
-  gap: 5px;
-  margin: 0 5px;
-  padding: 0;
-  position: relative;
-}
-
-.slider {
-  display: flex;
-  width: max-content;
-  transition: transform 0.5s ease-in-out;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #f44336;
-}
-
-.roman-decor {
-  display: block;
-  font-size: 2rem;
-  color: #f44336;
-  font-weight: bold;
-}
 
 /* Dashboard section */
 .dashboard {
   position: relative;
-  background-image: url("./assets/image1/funfact-bg.jpg"); /* your dull background */
+  background-image: url("./assets/image1/funfact-bg.jpg"); /* dull background */
   background-size: cover;
   background-position: center;
   color: white;

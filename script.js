@@ -97,35 +97,26 @@ document.addEventListener("DOMContentLoaded", function () {
   toggleScrollButton();
 
   //Autoslide for service section
-  const slider = document.getElementById("autoSlider");
-  const cards = document.querySelectorAll(".service-card");
-  const totalCards = cards.length;
-  const visibleCards = 3;
-  let currentIndex = 0;
+  const servswiper = new Swiper(".my-slider-container", {
+    slidesPerView: 3,
+    spaceBetween: 5,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    grabCursor: true,
+    navigation: {
+      nextEl: ".slider-button-next",
+      prevEl: ".slider-button-prev",
+    },
+    // 👇 Use your custom classes
+    wrapperClass: "my-slider-track",
+    slideClass: "my-slide"
+  });
 
-  // Clone the first few cards and append them to the end
-  for (let i = 0; i < visibleCards; i++) {
-    const clone = cards[i].cloneNode(true);
-    slider.appendChild(clone);
-  }
 
-  function slideCards() {
-    currentIndex++;
-    slider.style.transition = "transform 0.5s ease-in-out";
-    slider.style.transform = `translateX(-${
-      (100 / visibleCards) * currentIndex
-    }%)`;
 
-    // Reset when reaching the cloned cards
-    if (currentIndex === totalCards) {
-      setTimeout(() => {
-        slider.style.transition = "none";
-        slider.style.transform = "translateX(0)";
-        currentIndex = 0;
-      }, 600); // Wait for animation to complete
-    }
-  }
-  setInterval(slideCards, 3000); // every 3 seconds
 
   //Dashboard Section
   const counters = document.querySelectorAll('.counter');
