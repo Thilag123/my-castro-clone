@@ -607,6 +607,7 @@ body {
 .try-hover {
   width: 100%;
   display: block;
+  cursor: pointer;
 }
 
 /* Play Button */
@@ -626,4 +627,75 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: transform 0.4s ease;
+}
+
+
+.icon-container {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* space between icons */
+  opacity: 0;
+  transition: opacity 0.4s ease;  
+}
+
+.icon-container img {
+  width: 25px;
+  filter: brightness(70%); /* dim white */
+}
+
+.try-hover:hover + .icon-container {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icon {
+  position: relative; /* Needed for positioning the tooltip */
+  width: 40px; /* size of circle */
+  height: 40px;
+  background-color: rgb(194, 191, 191);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icon img {
+  width: 40%;
+  height: 40%;
+  object-fit: contain;
+  filter: brightness(70%); 
+}
+
+.icon:hover {
+  background-color: white;
+}
+
+.icon:hover img {
+  filter: brightness(100%);
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: -25px; /* position below the icon */
+  left: 170%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #333;
+  border: 1px solid black;
+  padding: 5px 10px;    
+  font-size: 12px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.icon:hover .tooltip-text {
+  opacity: 1; /* show tooltip on hover */
 }
