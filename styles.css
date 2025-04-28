@@ -465,6 +465,21 @@ body {
   background-color: #f25c05;
 }
 
+.image-wrapper:hover .service-img {
+  transform: scale(1.1);
+}
+
+.image-wrapper:hover .visual-search-icon {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.visual-search-icon:hover ~ .save-collections-icon,
+.visual-search-icon:hover ~ .settings-icon {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Dashboard section */
 .dashboard {
   position: relative;
@@ -629,15 +644,13 @@ body {
   transition: transform 0.4s ease;
 }
 
-
 .icon-container {
   position: absolute;
   top: 30px;
   right: 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* space between icons */
-  opacity: 0;
+  gap: 10px; /* space between icons */  
   transition: opacity 0.4s ease;  
 }
 
@@ -646,27 +659,24 @@ body {
   filter: brightness(70%); /* dim white */
 }
 
-.try-hover:hover + .icon-container {
-  opacity: 1;
-  pointer-events: auto;
-}
 
 .icon {
   position: relative; /* Needed for positioning the tooltip */
-  width: 40px; /* size of circle */
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background-color: rgb(194, 191, 191);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  opacity: 0;
   transition: background-color 0.3s ease;
 }
 
 .icon img {
-  width: 40%;
-  height: 40%;
+  width: 42%;
+  height: 42%;
   object-fit: contain;
   filter: brightness(70%); 
 }
@@ -698,4 +708,34 @@ body {
 
 .icon:hover .tooltip-text {
   opacity: 1; /* show tooltip on hover */
+}
+
+.try-hover:hover + .icon-container .visual-search-icon,
+.icon-container .visual-search-icon:hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+/* Always hide Save & Settings icons */
+.save-collections-icon,
+.settings-icon {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show Save & Settings when hovering on icon-group but ONLY triggered by hovering visual-search-icon */
+.icon-group:hover .save-collections-icon,
+.icon-group:hover .settings-icon,
+.icon-group:hover .visual-search-icon {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
 }
