@@ -480,6 +480,33 @@ body {
   pointer-events: auto;
 }
 
+.my-slide .icon-container {
+  position: absolute;
+  top: 20px; /* position of three icons */
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* space between icons */  
+  transition: opacity 0.4s ease;  
+}
+
+.my-slide .tooltip-text {
+  position: absolute;
+  bottom: -25px; /* position below the icon */
+  left: 190%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #333;
+  border: 1px solid black;
+  padding: 5px 10px;    
+  font-size: 12px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
 /* Dashboard section */
 .dashboard {
   position: relative;
@@ -602,7 +629,7 @@ body {
 }
 
 .zoom-container {  
-  overflow: hidden;
+  overflow: hidden;  
 }
 
 .zoom-container:hover .try-hover {
@@ -612,7 +639,6 @@ body {
 .zoom-container:hover .play-icon {
   transform: scale(1.1) translateY(-50%);
 }
-
 
 .try-hover,
 .play-icon {
@@ -644,13 +670,13 @@ body {
   transition: transform 0.4s ease;
 }
 
-.icon-container {
+.zoom-container .icon-container {
   position: absolute;
   top: 30px;
   right: 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* space between icons */  
+  gap: 8px; /* space between icons */  
   transition: opacity 0.4s ease;  
 }
 
@@ -658,7 +684,6 @@ body {
   width: 25px;
   filter: brightness(70%); /* dim white */
 }
-
 
 .icon {
   position: relative; /* Needed for positioning the tooltip */
@@ -692,7 +717,7 @@ body {
 .tooltip-text {
   position: absolute;
   bottom: -25px; /* position below the icon */
-  left: 170%;
+  left: 190%;
   transform: translateX(-50%);
   background-color: white;
   color: #333;
@@ -703,7 +728,7 @@ body {
   white-space: nowrap;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 10;
+  z-index: 20;
 }
 
 .icon:hover .tooltip-text {
@@ -739,3 +764,4 @@ body {
   pointer-events: auto;
   transition: opacity 0.3s ease;
 }
+
