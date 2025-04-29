@@ -32,7 +32,7 @@ body {
 }
 
 .social-icons a:hover {
-  color: #ff6347;
+  color: #f25c05;
 }
 
 .button-wrapper {
@@ -41,7 +41,7 @@ body {
 }
 
 .quote-button {
-  background-color: #f0572c;
+  background-color: #f25c05;
   color: white;
   border: none;
   height: 100%;
@@ -53,7 +53,7 @@ body {
 }
 
 .quote-button:hover {
-  background-color: #d94e24;
+  background-color: #f25c05;
 }
 
 .below-navbar {
@@ -75,6 +75,106 @@ body {
   align-items: center;
   padding: 20px;
   margin-right: 4.4em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .social-icons {
+    margin: 0;
+    justify-content: center;
+  }
+
+  .button-wrapper {
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  .quote-button {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Below-navbar adjustments */
+  .logo {
+    margin: 0;
+    padding: 0 1em;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .phone-address-container {
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+    padding: 0 1em;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Hero section adjustments */
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.875rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    font-size: 0.875rem;
+  }
+
+  /* About Us section */
+  .about-us {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .about-us .content,
+  .construction-image {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Services section */
+  .services {
+    padding: 30px 20px;
+  }
+
+  /* Reset margins and paddings */
+  .social-icons,
+  .quote-button,
+  .logo,
+  .phone-address-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 1em;
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 480px) {
+  .hero-overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 12px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    font-size: 12px;
+  }
 }
 
 .info-box {
@@ -362,7 +462,7 @@ body {
 }
 
 .section-title {
-  color: #f44336;
+  color: #f25c05;
   font-size: 36px;
   margin-bottom: 40px;
   font-weight: 700;
@@ -372,7 +472,7 @@ body {
 .roman-decor {
   display: block;
   font-size: 2rem;
-  color: #f44336;
+  color: #f25c05;
   font-weight: bold;
   margin-top: 15px;
 }
@@ -404,7 +504,7 @@ body {
 }
 
 .my-slide a {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #333;
   font-weight: 700;
   cursor: pointer;
@@ -465,13 +565,23 @@ body {
   background-color: #f25c05;
 }
 
-.image-wrapper:hover .service-img {
+.image-wrapper:hover .service-img,
+.zoom-container:hover .try-hover {
   transform: scale(1.1);
 }
 
 .image-wrapper:hover .visual-search-icon {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* Only show visual-search-icon on image hover */
+.image-wrapper:hover ~ .icon-container .visual-search-icon {
+  opacity: 1;
+  pointer-events: auto;
+}
+.image-wrapper:hover ~ .icon-box {
+  background-color: #f25c05;
 }
 
 .visual-search-icon:hover ~ .save-collections-icon,
@@ -577,7 +687,7 @@ body {
 }
 
 .about-us h2 {
-  color: #ff4a17;
+  color: #f25c05;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -599,14 +709,14 @@ body {
 }
 
 .about-us button {
-  background-color: #ff4a17;
+  background-color: #f25c05;
   color: #fff;
   padding: 15px 30px;
   width: 11rem;
   height: 3.5rem;
   border: none;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   cursor: pointer;
   text-transform: uppercase;
@@ -620,8 +730,8 @@ body {
 /* Right Image Section */
 .construction-image {
   width: 39.8%;
-  border-right: 5px solid #ff4a17;
-  border-bottom: 5px solid #ff4a17;
+  border-right: 5px solid #f25c05;
+  border-bottom: 5px solid #f25c05;
   padding: 20px;
   position: relative;
   margin-top: 4rem;
@@ -630,10 +740,6 @@ body {
 
 .zoom-container {  
   overflow: hidden;  
-}
-
-.zoom-container:hover .try-hover {
-  transform: scale(1.1);
 }
 
 .zoom-container:hover .play-icon {
@@ -657,7 +763,7 @@ body {
   top: 50%;
   left: -25px;
   transform: translateY(-50%);
-  background-color: #ff4a17;
+  background-color: #f25c05;
   color: white;
   font-size: 27px;
   width: 100px;
@@ -764,4 +870,3 @@ body {
   pointer-events: auto;
   transition: opacity 0.3s ease;
 }
-
