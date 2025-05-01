@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const herobtn = document.querySelector(".hero-overlay .hero-btn");
 
   function animateOverlay() {
-    // Remove in case it's still there from last time             
+    // Remove in case it's still there from last time
     h1.classList.remove("animate-in");
     p.classList.remove("animate-in");
     herobtn.classList.remove("animate-in");
@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Run once on page load
   toggleScrollButton();
 
+
   //Autoslide for service section
   const servswiper = new Swiper(".my-slider-container", {
     slidesPerView: 3,
@@ -110,20 +111,17 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".slider-button-next",
       prevEl: ".slider-button-prev",
     },
-    // 👇 Use your custom classes
+    // Use custom classes
     wrapperClass: "my-slider-track",
-    slideClass: "my-slide"
+    slideClass: "my-slide",
   });
 
-
-
-
   //Dashboard Section
-  const counters = document.querySelectorAll('.counter');
+  const counters = document.querySelectorAll(".counter");
 
-  counters.forEach(counter => {
+  counters.forEach((counter) => {
     const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
+      const target = +counter.getAttribute("data-target");
       const count = +counter.innerText;
 
       // Speed can be adjusted (lower = faster)
@@ -139,5 +137,4 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     updateCount();
   });
-
 });

@@ -21,11 +21,15 @@
   <body>
     <nav class="navbar">
       <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-vimeo-v"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-skype"></i></a>
+        <a href="https://www.facebook.com/"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+        <a href="https://vimeo.com/"><i class="fab fa-vimeo-v"></i></a>
+        <a href="https://www.linkedin.com/"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="https://www.skype.com/en/"><i class="fab fa-skype"></i></a>
       </div>
       <div class="button-wrapper">
         <button class="quote-button">GET A QUOTE</button>
@@ -65,20 +69,64 @@
     <!--main navbar -->
     <nav class="main-navbar">
       <ul class="nav-links">
-        <li>
-          HOME <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+        <!-- Home Dropdown -->
+        <li class="home-dropdown">
+          <div class="home-dropdown-wrapper">
+            HOME <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+            <ul class="home-dropdown-menu">
+              <li><a href="#">Homepage One</a></li>
+              <li><a href="#">Homepage Two</a></li>
+              <li><a href="#">Homepage Three</a></li>
+            </ul>
+          </div>
         </li>
-        <li>ABOUT</li>
-        <li>
-          SERVICE <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+
+        <!-- ABOUT -->
+        <li class="about-link">
+          <div class="nav-link-wrapper">ABOUT</div>
         </li>
-        <li>
-          PROJECT <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+
+        <!-- Services Dropdown -->
+        <li class="services-dropdown">
+          <div class="services-dropdown-wrapper">
+            SERVICES <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+            <ul class="services-dropdown-menu">
+              <li><a href="#">Service Page</a></li>
+              <li><a href="#">Service Details Left Sidebar</a></li>
+              <li><a href="#">Service Details Right Sidebar</a></li>
+            </ul>
+          </div>
         </li>
-        <li>
-          BLOG <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+
+        <!-- Projects Dropdown -->
+        <li class="projects-dropdown">
+          <div class="projects-dropdown-wrapper">
+            PROJECTS <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+            <ul class="projects-dropdown-menu">
+              <li><a href="#">Project Page</a></li>
+              <li><a href="#">Project Details</a></li>
+            </ul>
+          </div>
         </li>
-        <li>CONTACT</li>
+
+        <!-- Blogs Dropdown -->
+        <li class="blogs-dropdown">
+          <div class="blogs-dropdown-wrapper">
+            BLOGS <span class="arrow" style="font-size: 0.6em">&#9660;</span>
+            <ul class="blogs-dropdown-menu">
+              <li><a href="#">Blog Left Sidebar</a></li>
+              <li><a href="#">Blog Right Sidebar</a></li>
+              <li><a href="#">Blog Details Left Sidebar </a></li>
+              <li><a href="#">Blog Details Right Sidebar </a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- CONTACT -->
+        <li class="contact-link">
+          <div class="nav-link-wrapper">CONTACT</div>
+        </li>
+        
       </ul>
     </nav>
 
@@ -136,7 +184,7 @@
                 class="service-img"
                 src="./assets/image2/service2.jpg"
                 alt="Service 2"
-              />              
+              />
             </div>
             <!-- Icon Container -->
             <div class="icon-container">
@@ -185,7 +233,7 @@
                 class="service-img"
                 src="./assets/image2/service3.jpg"
                 alt="Service 3"
-              />              
+              />
             </div>
             <!-- Icon Container -->
             <div class="icon-container">
@@ -234,7 +282,7 @@
                 class="service-img"
                 src="./assets/image2/service1.jpg"
                 alt="Service 1"
-              />              
+              />
             </div>
             <!-- Icon Container -->
             <div class="icon-container">
@@ -283,7 +331,7 @@
                 class="service-img"
                 src="./assets/image2/service1.jpg"
                 alt="Service 4"
-              /> 
+              />
             </div>
             <!-- Icon Container -->
             <div class="icon-container">
@@ -313,7 +361,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="icon-box dark">
               <img src="./assets/image1/icon2.svg" />
             </div>
