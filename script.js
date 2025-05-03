@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  //Hero Section
   const swiper = new Swiper(".swiper-container", {
     loop: true,
     slidesPerView: 1,
@@ -96,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Run once on page load
   toggleScrollButton();
 
-
   //Autoslide for service section
   const servswiper = new Swiper(".my-slider-container", {
     slidesPerView: 3,
@@ -137,4 +138,16 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     updateCount();
   });
+
+ //Latest Projects
+ 
+ const latestProjectswiper = new Swiper(".swiper-latest-project", {
+  loop: true,      
+  navigation: {
+    nextEl: ".project-next",
+    prevEl: ".project-prev"
+  }   
+});
+
+
 });

@@ -1025,3 +1025,123 @@ the hover state alive when the cursor passes through */
   pointer-events: auto;
   transition: opacity 0.3s ease;
 }
+
+/* Latest Projects */
+.latest-projects {
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff;
+  color: #333;
+}
+
+.latest-project-title {
+  font-size: 2rem;
+  color: #ff3d00;
+  margin-bottom: 10px;
+}
+
+.underline {
+  width: 5px;
+  height: 25px;
+  background: #ff3d00;
+  margin: 0 auto 30px auto;
+}
+
+.swiper-latest-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.swiper-latest-project .swiper-slide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.project-image {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  margin-left: 5rem; /* creates a gap from the left edge or button */
+  margin-right: 3rem; 
+}
+
+.project-info {
+  width: 50%;
+  padding: 20px;
+  text-align: left;
+  
+}
+
+.project-number {
+  font-size: 3rem;
+  color: #ccc;
+  font-weight: 700;
+}
+
+.project-title {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.project-description {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.view-more {
+  color: #ff512f;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.project-prev, .project-next {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.project-prev {
+  left: 0;
+}
+
+.project-next {
+  right: 0;
+}
+
+.project-prev:hover,
+.project-next:hover {
+  background: #ff3d00;
+  color: #fff;
+}
+
+.swiper-latest-project .swiper-slide::before,
+.swiper-latest-project .swiper-slide::after {
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
