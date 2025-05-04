@@ -456,85 +456,110 @@
             </div>
           </div>
 
-          <div class="play-icon">▶</div>
+          <!-- Play Button -->
+          <div class="play-icon" id="playButton">▶</div>
+
+          <!-- Modal Container -->
+          <div id="videoModal" class="video-modal">
+            <div class="video-container">
+              <span id="closeModal" class="close-button">&times;</span>
+              <div class="video-wrapper">
+                <iframe
+                  id="youtubePlayer"
+                  src=""
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- Latest projects -->
     <section class="latest-projects">
-      <h2 class="latest-project-title">Latest Projects</h2>
-      <div class="underline"></div>
+      <div class="project-card">
+        <h2 class="latest-project-title">Latest Projects</h2>
+        <div class="underline"></div>
 
-      <div class="swiper swiper-latest-project">
-        <button class="project-prev">&#8249;</button>
+        <div class="swiper swiper-latest-project">
+          <button class="project-prev">&#8249;</button>
 
-        <div class="swiper-wrapper project-swiper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide project-item-swiper active">
-            <img
-              src="./assets/image2/LatestProject.jpg"
-              alt="Construction"
-              class="project-image"
-            />
-            <div class="project-info">
-              <span class="project-number">01</span>
-              <h3 class="project-title">Construction Management</h3>
-              <p class="project-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam expedita illo <br>
-                sint doloremque excepturi voluptatem id, similique cum animi accusantium in sequi <br>
-                maiores eveniet iure!
-              </p>
-              <a href="#" class="view-more">VIEW MORE</a>
+          <div class="swiper-wrapper project-swiper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide project-item-swiper active">
+              <img
+                src="./assets/image2/LatestProject.jpg"
+                alt="Construction"
+                class="project-image"
+              />
+              <div class="project-info">
+                <span class="project-number">01</span>
+                <h3 class="project-title">Construction Management</h3>
+                <p class="project-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                  expedita illo <br />
+                  sint doloremque excepturi voluptatem id, similique cum animi
+                  accusantium in sequi <br />
+                  maiores eveniet iure!
+                </p>
+                <a href="#" class="view-more">VIEW MORE</a>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide project-item-swiper">
+              <img
+                src="./assets/image2/LatestProject.jpg"
+                alt="Work Management"
+                class="project-image"
+              />
+              <div class="project-info">
+                <span class="project-number">02</span>
+                <h3 class="project-title">Power and Energy</h3>
+                <p class="project-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                  expedita illo <br />
+                  sint doloremque excepturi voluptatem id, similique cum animi
+                  accusantium in sequi <br />
+                  maiores eveniet iure!
+                </p>
+                <a href="#" class="view-more">VIEW MORE</a>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide project-item-swiper">
+              <img
+                src="./assets/image2/LatestProject.jpg"
+                alt="Power and Energy"
+                class="project-image"
+              />
+              <div class="project-info">
+                <span class="project-number">03</span>
+                <h3 class="project-title">Work Management</h3>
+                <p class="project-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                  expedita illo <br />
+                  sint doloremque excepturi voluptatem id, similique cum animi
+                  accusantium in sequi <br />
+                  maiores eveniet iure!
+                </p>
+                <a href="#" class="view-more">VIEW MORE</a>
+              </div>
             </div>
           </div>
 
-          <!-- Slide 2 -->
-          <div class="swiper-slide project-item-swiper">
-            <img
-              src="./assets/image2/LatestProject.jpg"
-              alt="Work Management"
-              class="project-image"
-            />
-            <div class="project-info">
-              <span class="project-number">02</span>
-              <h3 class="project-title">Power and Energy</h3>
-              <p class="project-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam expedita illo <br>
-                sint doloremque excepturi voluptatem id, similique cum animi accusantium in sequi <br>
-                maiores eveniet iure!
-              </p>
-              <a href="#" class="view-more">VIEW MORE</a>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="swiper-slide project-item-swiper">
-            <img
-              src="./assets/image2/LatestProject.jpg"
-              alt="Power and Energy"
-              class="project-image"
-            />
-            <div class="project-info">
-              <span class="project-number">03</span>
-              <h3 class="project-title">Work Management</h3>
-              <p class="project-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam expedita illo <br>
-                sint doloremque excepturi voluptatem id, similique cum animi accusantium in sequi <br>
-                maiores eveniet iure!
-              </p>
-              <a href="#" class="view-more">VIEW MORE</a>
-            </div>
-          </div>
+          <button class="project-next">&#8250;</button>
         </div>
-
-        <button class="project-next">&#8250;</button>
       </div>
     </section>
-   
 
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
   </body>

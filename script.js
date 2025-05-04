@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   //Hero Section
   const swiper = new Swiper(".swiper-container", {
     loop: true,
@@ -139,15 +138,37 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCount();
   });
 
- //Latest Projects
- 
- const latestProjectswiper = new Swiper(".swiper-latest-project", {
-  loop: true,      
-  navigation: {
-    nextEl: ".project-next",
-    prevEl: ".project-prev"
-  }   
-});
+  //Construction section - YouTube video
+  // Get elements
+  const thumbnailImage = document.querySelector(".try-hover");
+  const playButton = document.getElementById("playButton");
+  const modal = document.getElementById("videoModal");
+  const closeModal = document.getElementById("closeModal");
+  const youtubePlayer = document.getElementById("youtubePlayer");
 
+  // Function to open modal and play video
+  function openVideoModal() {
+    modal.style.display = "flex";
+    youtubePlayer.src = "https://www.youtube.com/embed/OrS-93U4AYQ?autoplay=1";
+  }
 
+  // Function to close modal and stop video
+  function closeVideoModal() {
+    modal.style.display = "none";
+    youtubePlayer.src = ""; // Reset the src to stop video
+  }
+
+  // Event listeners for both image and play button
+  thumbnailImage.addEventListener("click", openVideoModal);
+  playButton.addEventListener("click", openVideoModal);
+  closeModal.addEventListener("click", closeVideoModal);
+
+  //Latest Projects
+  const latestProjectswiper = new Swiper(".swiper-latest-project", {
+    loop: true,
+    navigation: {
+      nextEl: ".project-next",
+      prevEl: ".project-prev",
+    },
+  });
 });

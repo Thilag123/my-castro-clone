@@ -608,7 +608,7 @@ the hover state alive when the cursor passes through */
   pointer-events: auto;
 }
 
-/* Services starts here */
+/* Services section starts here */
 .services {
   padding: 60px 80px;
   background-color: #fff;
@@ -858,7 +858,7 @@ the hover state alive when the cursor passes through */
 
 .about-us p {
   font-size: 18px;
-  color: #555;
+  color: #000;
   line-height: 1.7;
   margin-bottom: 30px;
 }
@@ -1026,12 +1026,72 @@ the hover state alive when the cursor passes through */
   transition: opacity 0.3s ease;
 }
 
-/* Latest Projects */
+/* Modal Background */
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* soft black overlay */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centered Container */
+.video-container {
+  background-color: #000;  
+  max-width: 800px;     /* Can decrease this */
+  width: 80%;           /* Adjusts size responsively */
+  max-height: 60vh;     /* Prevents it from getting too tall */
+  position: relative;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Responsive Video */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Latest Projects Section */
 .latest-projects {
   text-align: center;
-  padding: 50px 20px;
+  padding: 80px 20px;
   background: #fff;
   color: #333;
+}
+
+.project-card {
+  background-color: #f7f7f7; /* Dim white */
+  left: 0;
+  right: 0;  
+  padding-top: 90px;
+  padding-bottom: 80px;
+  margin: auto;   
 }
 
 .latest-project-title {
@@ -1064,16 +1124,16 @@ the hover state alive when the cursor passes through */
   display: flex;
   flex-direction: row;
   align-items: center;
-  min-width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
+  min-width: 100%;  
+  box-sizing: border-box;  
+  padding: 20px;  
 }
 
 .project-image {
   width: 45%;
   height: auto;
   object-fit: cover;
-  margin-left: 5rem; /* creates a gap from the left edge or button */
+  margin-left: 5rem; 
   margin-right: 3rem; 
 }
 
@@ -1085,7 +1145,7 @@ the hover state alive when the cursor passes through */
 }
 
 .project-number {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #ccc;
   font-weight: 700;
 }
@@ -1098,17 +1158,21 @@ the hover state alive when the cursor passes through */
 }
 
 .project-description {
-  color: #444;
+  color: #000;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .view-more {
   color: #ff512f;
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: bold;
   display: inline-block;
   margin-top: 10px;
+}
+
+.view-more:hover{
+  color: #000;
 }
 
 .project-prev, .project-next {
