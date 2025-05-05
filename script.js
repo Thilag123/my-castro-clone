@@ -171,4 +171,59 @@ document.addEventListener("DOMContentLoaded", function () {
       prevEl: ".project-prev",
     },
   });
+
+  //Testimonial Section
+  const testimonials = [
+    {
+      image: "./assets/image3/madison.jpg",
+      name: "Madison Black",
+      position: "Founder",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos iusto <br> veritatis ipsam tempore quod quasi molestiae vel, consequatur eos <br> fugiat voluptates repellat",      
+    },
+    {
+      image: "./assets/image3/jonathan.jpg",
+      name: "Jonathan Doe",
+      position: "Engineer",
+      text: "sapiente mollitia fugiat non illo nisi aspernatur, velit omnis unde!<br> Voluptatem aspernatur maxime fuga.",
+    },
+    {
+      image: "./assets/image3/john.jpg",
+      name: "John Doe",
+      position: "CEO",
+      text: "consectetur adipisicing elit iusto veritatis ipsam tempore quod <br> quasi molestiae vel, consequatur eos fugiat voluptates repellat.",
+    },
+  ];
+
+  const dots = document.querySelectorAll(".dot");
+  const profileImg = document.querySelector(".profile-img");
+  const profileName = document.getElementById("profile-name");
+  const profilePosition = document.getElementById("profile-position");
+  const testimonialText = document.getElementById("testimonial-text");
+  const section = document.querySelector(".testimonial-section");
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const index = parseInt(dot.dataset.index);
+
+      // Update content
+      const t = testimonials[index];
+      profileImg.src = t.image;
+      profileName.textContent = t.name;
+      profilePosition.textContent = t.position;
+      testimonialText.innerHTML = `<em>${t.text}</em>`;
+
+      // Zoom only on first dot
+      if (index === 0) {
+        section.classList.add("zoomed");
+      } else {
+        section.classList.remove("zoomed");
+      }
+
+      // Update dot active class
+      dots.forEach((d) => d.classList.remove("active"));
+      dot.classList.add("active");
+    });
+  });
+
+
 });
