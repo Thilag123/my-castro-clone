@@ -195,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const dots = document.querySelectorAll(".dot");
+  const dotsContainer = document.querySelector(".dots");
   const profileImg = document.querySelector(".profile-img");
   const profileName = document.getElementById("profile-name");
   const profilePosition = document.getElementById("profile-position");
@@ -215,8 +216,10 @@ document.addEventListener("DOMContentLoaded", function () {
       // Zoom only on first dot
       if (index === 0) {
         section.classList.add("zoomed");
+        dotsContainer.classList.add("zoomed");
       } else {
         section.classList.remove("zoomed");
+        dotsContainer.classList.remove("zoomed");
       }
 
       // Update dot active class
@@ -225,5 +228,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Blog Section
+  const title = document.querySelector(".blog-title");
+  title.addEventListener("mouseover", () => {
+    title.style.color = "#c0392b";
+  });
+  title.addEventListener("mouseout", () => {
+    title.style.color = "#e74c3c";
+  });
 
 });
