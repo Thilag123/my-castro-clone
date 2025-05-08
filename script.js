@@ -107,10 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: false,
     },
     grabCursor: true,
-    navigation: {
-      nextEl: ".slider-button-next",
-      prevEl: ".slider-button-prev",
-    },
+
     // Use custom classes
     wrapperClass: "my-slider-track",
     slideClass: "my-slide",
@@ -178,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "./assets/image3/madison.jpg",
       name: "Madison Black",
       position: "Founder",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos iusto <br> veritatis ipsam tempore quod quasi molestiae vel, consequatur eos <br> fugiat voluptates repellat",      
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos iusto <br> veritatis ipsam tempore quod quasi molestiae vel, consequatur eos <br> fugiat voluptates repellat",
     },
     {
       image: "./assets/image3/jonathan.jpg",
@@ -226,15 +223,20 @@ document.addEventListener("DOMContentLoaded", function () {
       dots.forEach((d) => d.classList.remove("active"));
       dot.classList.add("active");
     });
+  });  
+
+  //Logo section
+  const logoSwiper = new Swiper("#logoSwiper", {
+    slidesPerView: 4,
+    slidesPerGroup: 1,       // Move 1 slide per transition
+    loop: true,
+    autoplay: {
+      delay: 2800,           // 3 seconds
+      disableOnInteraction: false,
+    },
+    speed: 200,              // Transition speed
+    spaceBetween: 6,
   });
 
-  // Blog Section
-  const title = document.querySelector(".blog-title");
-  title.addEventListener("mouseover", () => {
-    title.style.color = "#c0392b";
-  });
-  title.addEventListener("mouseout", () => {
-    title.style.color = "#e74c3c";
-  });
 
 });

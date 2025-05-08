@@ -1475,6 +1475,14 @@ hr {
   text-align: center;
 }
 
+.blog-card {
+  background-color: #f7f7f7; /* Dim white */
+  left: 0;
+  right: 0;         
+  padding-bottom: 70px;   
+  margin-bottom: 20px;
+}
+
 .blog-title {
   color: #f25c05;
   font-size: 34px;
@@ -1577,3 +1585,31 @@ hr {
 .read-more:hover {
   color: #f25c05;
 }
+
+/* Logo section */
+/* Style ONLY the logo swiper, not others */
+.logo-swiper-container {
+  width: 1300px;
+  overflow: hidden;
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+
+.logo-swiper .swiper-wrapper {
+  display: flex;
+  transition-timing-function: ease-in-out;
+}
+
+.logo-swiper .swiper-slide {
+  flex: 0 0 25%; /* 4 per view */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-swiper .swiper-slide img {
+  max-height: 80px;
+  width: auto;
+  padding: 0 10px;
+}
+
