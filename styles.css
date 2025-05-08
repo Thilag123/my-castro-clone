@@ -579,7 +579,7 @@ the hover state alive when the cursor passes through */
 /* Scroll to Top button*/
 .scroll-top {
   position: fixed;
-  bottom: 30px;
+  bottom: 70px;
   right: 30px;
   background-color: #f25c05;
   color: white;
@@ -1631,7 +1631,7 @@ hr {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 40px;
-  padding: 40px 80px;
+  padding: 30px 80px;
   align-items: flex-start;  
 }
 
@@ -1708,17 +1708,23 @@ hr {
   color: #f25c05;
 }
 
-.footer-bottom {
-  border-top: 1px solid #222;
+.footer-line {
+  border: none;
+  height: 1px;
+  background-color: #515050; 
+  margin-bottom: -60px;
+}
+
+.footer-bottom {  
   text-align: center;
   margin-top: 40px;
-  padding-top: 20px;
+  padding-top: 25px;
   font-size: 13px;
   color: #aaa;
 }
 
 .heart {
-  color: #f25c05;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
