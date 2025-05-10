@@ -14,6 +14,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  left: 0;
+  right: 0;
   background-color: #2d2d2d;
   padding: 0 20px;
   height: 50px;
@@ -654,7 +656,7 @@ the hover state alive when the cursor passes through */
 .my-slide img {
   width: 100%;
   height: auto;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 .my-slide a {
@@ -664,8 +666,11 @@ the hover state alive when the cursor passes through */
   cursor: pointer;
 }
 
-.my-slide h3 {
-  margin-top: 50px;
+.my-slide .service-post {
+  text-decoration: none;
+  font-size: 21px;
+  top: 50px;
+  position: relative;
   color: #2d2d2d;
   cursor: pointer;
 }
@@ -673,19 +678,70 @@ the hover state alive when the cursor passes through */
 .my-slide p {
   font-size: 16px;
   color: #666;
+  margin-top: 60px;
   line-height: 1.6;
 }
 
 .icon-box {
   position: absolute;
-  top: 200px;
-  left: 20px;
+  top: 215px;
+  left: 15px;
   background-color: #333;
   padding: 10px;
   margin: 15px;
   width: 70px;
   height: 70px;
   cursor: default;
+}
+
+.icon-box .welding-image{
+  width: 50px;
+  height: 70px;
+  padding-top: 10px;
+  padding-left: 9px;
+  padding-bottom: 25px;
+  padding-right: 10px;  
+}
+
+.my-slide:hover .welding-image {
+  content: url(./assets/image1/welding1.png);
+}
+
+.icon-box .cart-image {
+  width: 45px;
+  height: 45px;
+  padding-top: 10px;
+  padding-left: 7px;
+}
+
+.icon-box .cart-image {
+  transition: all 0.3s ease;
+}
+
+.my-slide:hover .cart-image {
+  content: url('./assets/image1/cart1.png');
+}
+
+.icon-box .walkie-image {
+  width: 35px;
+  height: 50px;
+  padding-top: 8px;
+  padding-left: 12px;
+}
+
+.my-slide:hover .walkie-image {
+  content: url('./assets/image1/walkie1.png');
+}
+
+.icon-box .tank-image {
+  width: 40px;
+  height: 45px;
+  padding-top: 10px;
+  padding-left: 7px;
+}
+
+.my-slide:hover .tank-image {
+  content: url('./assets/image1/tank1.png');
 }
 
 .icon-box img {
@@ -710,9 +766,12 @@ the hover state alive when the cursor passes through */
   transform: scale(1.1);
 }
 
-.my-slide:hover h3,
 .my-slide:hover a {
   color: #f25c05;
+}
+
+.my-slide:hover .service-post {
+  color: #000;
 }
 
 .my-slide:hover .icon-box {
@@ -842,15 +901,16 @@ the hover state alive when the cursor passes through */
 
 .about-us h2 {
   color: #f25c05;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .about-us h3 {
   font-size: 40px;
   font-weight: 700;
   color: #0b0c14;
+  margin-top: 0 !important;
   margin-bottom: 20px;
   line-height: 1.4;
 }
@@ -1563,9 +1623,16 @@ hr {
 }
 
 .post-title {
-  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+  font-size: 23px;
   font-weight: bold;
   margin: 10px 0;
+}
+
+.post-title:hover {
+  color: #f25c05;
+  cursor: pointer;
 }
 
 .description {
@@ -1573,7 +1640,7 @@ hr {
   font-size: 16px;
   line-height: 1.7;
 }
-
+  
 .read-more {
   color: #343333;
   font-weight: 750;
@@ -1621,7 +1688,7 @@ hr {
 .footer {
   background-color: #0a0a0a;  
   color: #ccc;
-  padding: 8px 20px;
+  padding: 15px 20px;
   font-family: 'Segoe UI', sans-serif;
   position: relative;
 }
@@ -1630,7 +1697,7 @@ hr {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 5px;
   padding: 30px 80px;
   align-items: flex-start;  
 }
