@@ -49,7 +49,7 @@ body {
   border: none;
   height: 100%;
   margin-right: 90px;
-  padding: 0 40px;
+  padding: 0 37px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -69,7 +69,7 @@ body {
 }
 
 .logo {
-  margin-left: 6em;
+  margin-left: 9.5em;
 }
 
 .phone-address-container {
@@ -766,12 +766,12 @@ the hover state alive when the cursor passes through */
   transform: scale(1.1);
 }
 
-.my-slide:hover a {
-  color: #f25c05;
+.my-slide:hover a:not(.service-post) {
+  color:#f25c05;
 }
 
-.my-slide:hover .service-post {
-  color: #000;
+.my-slide .service-post:hover {
+  color: #f25c05;
 }
 
 .my-slide:hover .icon-box {
@@ -816,7 +816,7 @@ the hover state alive when the cursor passes through */
 .my-slide .tooltip-text {
   position: absolute;
   bottom: -25px; /* position below the icon */
-  left: 190%;
+  left: -10px;
   transform: translateX(-50%);
   background-color: white;
   color: #333;
