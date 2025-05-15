@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  overflow-x: hidden;  
+  overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -656,7 +656,7 @@ the hover state alive when the cursor passes through */
 .my-slide img {
   width: 100%;
   height: auto;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .my-slide a {
@@ -694,17 +694,17 @@ the hover state alive when the cursor passes through */
   cursor: default;
 }
 
-.icon-box .welding-image{
+.icon-box .welding-image {
   width: 50px;
   height: 70px;
   padding-top: 10px;
   padding-left: 9px;
   padding-bottom: 25px;
-  padding-right: 10px;  
+  padding-right: 10px;
 }
 
 .my-slide:hover .welding-image {
-  content: url('./assets/image1/welding1.png');
+  content: url("./assets/image1/welding1.png");
 }
 
 .icon-box .cart-image {
@@ -719,7 +719,7 @@ the hover state alive when the cursor passes through */
 }
 
 .my-slide:hover .cart-image {
-  content: url('./assets/image1/cart1.png');
+  content: url("./assets/image1/cart1.png");
 }
 
 .icon-box .walkie-image {
@@ -730,7 +730,7 @@ the hover state alive when the cursor passes through */
 }
 
 .my-slide:hover .walkie-image {
-  content: url('./assets/image1/walkie1.png');
+  content: url("./assets/image1/walkie1.png");
 }
 
 .icon-box .tank-image {
@@ -741,7 +741,7 @@ the hover state alive when the cursor passes through */
 }
 
 .my-slide:hover .tank-image {
-  content: url('./assets/image1/tank1.png');
+  content: url("./assets/image1/tank1.png");
 }
 
 .icon-box img {
@@ -767,7 +767,7 @@ the hover state alive when the cursor passes through */
 }
 
 .my-slide:hover a:not(.service-post) {
-  color:#f25c05;
+  color: #f25c05;
 }
 
 .my-slide .service-post:hover {
@@ -783,24 +783,8 @@ the hover state alive when the cursor passes through */
   transform: scale(1.1);
 }
 
-.image-wrapper:hover .visual-search-icon {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Only show visual-search-icon on image hover */
-.image-wrapper:hover ~ .icon-container .visual-search-icon {
-  opacity: 1;
-  pointer-events: auto;
-}
 .image-wrapper:hover ~ .icon-box {
   background-color: #f25c05;
-}
-
-.visual-search-icon:hover ~ .save-collections-icon,
-.visual-search-icon:hover ~ .settings-icon {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .my-slide .icon-container {
@@ -1055,34 +1039,11 @@ the hover state alive when the cursor passes through */
   opacity: 1; /* show tooltip on hover */
 }
 
-.try-hover:hover + .icon-container .visual-search-icon,
-.icon-container .visual-search-icon:hover {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 .icon-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
   position: relative;
-}
-
-/* Always hide Save & Settings icons */
-.save-collections-icon,
-.settings-icon {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-/* Show Save & Settings when hovering on icon-group but ONLY triggered by hovering visual-search-icon */
-.icon-group:hover .save-collections-icon,
-.icon-group:hover .settings-icon,
-.icon-group:hover .visual-search-icon {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.3s ease;
 }
 
 /* Modal Background */
@@ -1539,8 +1500,8 @@ hr {
   background-color: #f7f7f7; /* Dim white */
   left: 0;
   right: 0;
-  padding-top: 40px;       
-  padding-bottom: 70px;   
+  padding-top: 40px;
+  padding-bottom: 70px;
   margin-bottom: 20px;
 }
 
@@ -1553,7 +1514,7 @@ hr {
 }
 
 .blog-title::after {
-  content: 'I';
+  content: "I";
   display: block;
   font-size: 36px;
   color: #f25c05;
@@ -1608,7 +1569,7 @@ hr {
 }
 
 .post img {
-  width: 100%;  
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -1640,7 +1601,7 @@ hr {
   font-size: 16px;
   line-height: 1.7;
 }
-  
+
 .read-more {
   color: #343333;
   font-weight: 750;
@@ -1686,10 +1647,10 @@ hr {
 
 /* Footer Section */
 .footer {
-  background-color: #0a0a0a;  
+  background-color: #0a0a0a;
   color: #ccc;
   padding: 15px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   position: relative;
 }
 
@@ -1699,13 +1660,13 @@ hr {
   flex-wrap: wrap;
   gap: 5px;
   padding: 30px 80px;
-  align-items: flex-start;  
+  align-items: flex-start;
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;  /* Ensures perfect left alignment */
+  align-items: flex-start; /* Ensures perfect left alignment */
 }
 
 .footer-col {
@@ -1720,13 +1681,12 @@ hr {
   align-items: flex-start;
 }
 
-.logo img {  
+.logo img {
   display: block;
   width: auto;
   margin-left: -60px;
   margin-top: 29px;
   margin-bottom: 20px;
-  
 }
 
 .footer-text {
@@ -1748,13 +1708,13 @@ hr {
 .footer-right-group {
   display: flex;
   gap: 7rem;
-  margin-left: 4rem; 
+  margin-left: 4rem;
   flex-wrap: wrap;
 }
 
 .footer-col ul {
   list-style: none;
-  padding: 0;  
+  padding: 0;
 }
 
 .footer-col h4 {
@@ -1778,11 +1738,11 @@ hr {
 .footer-line {
   border: none;
   height: 1px;
-  background-color: #515050; 
+  background-color: #515050;
   margin-bottom: -60px;
 }
 
-.footer-bottom {  
+.footer-bottom {
   text-align: center;
   margin-top: 40px;
   padding-top: 25px;
@@ -1810,5 +1770,4 @@ hr {
     text-align: left;
     padding-left: 20px;
   }
-  
 }
