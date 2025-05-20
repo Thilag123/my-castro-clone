@@ -21,7 +21,10 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <title>Castro - Javascript Construction Template</title>
   </head>
@@ -75,7 +78,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Main Navbar -->
     <nav class="main-navbar">
       <ul class="nav-links">
@@ -84,7 +87,7 @@
           <div class="home-dropdown-wrapper">
             HOME <i class="fa-solid fa-angle-down"></i>
             <ul class="home-dropdown-menu">
-              <li><a href="#">Homepage One</a></li>
+              <li><a href="/index.html">Homepage One</a></li>
               <li><a href="../home/home-two.html">Homepage Two</a></li>
               <li><a href="../home/home-three.html">Homepage Three</a></li>
             </ul>
@@ -155,5 +158,45 @@
         </p>
       </div>
     </section>
+
+    <!-- Service Section -->
+    <div class="container">
+      <!-- Services Panel -->
+      <div class="services-panel">
+        <h2>Services</h2>
+        <ul>
+          <li><i class="icon">🚜</i> Construction</li>
+          <li><i class="icon">🏛️</i> House Remodel</li>
+          <li><i class="icon">🛠️</i> Interior Design</li>
+          <li><i class="icon">🧱</i> Floors & Roofs</li>
+          <li><i class="icon">🚰</i> Plumbing</li>
+          <li><i class="icon">⚡</i> Electricity</li>
+        </ul>
+      </div>
+
+      <!-- Swiper Slider -->
+      <div class="swiper-container swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="../assets/image1/service-details-1.jpg" alt="Slide 1" /></div>
+          <div class="swiper-slide"><img src="../assets/image1/service-details-2.jpg" alt="Slide 2" /></div>
+          <div class="swiper-slide"><img src="../assets/image1/service-details-3.jpg" alt="Slide 3" /></div>
+          <div class="swiper-slide"><img src="../assets/image1/service-details-4.jpg" alt="Slide 4" /></div>
+          <div class="swiper-slide"><img src="../assets/image1/service-details-5.jpg" alt="Slide 5" /></div>
+          <div class="swiper-slide"><img src="../assets/image1/service-details-6.jpg" alt="Slide 6" /></div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="custom-swiper-button button-prev">‹</div>
+        <div class="custom-swiper-button button-next">›</div>
+      </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="service-details-left-sidebarservice-details-left-sidebar.js"></script>
   </body>
 </html>

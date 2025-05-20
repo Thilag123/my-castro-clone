@@ -163,7 +163,7 @@ body {
   margin: 0;
   padding: 0;
   display: inline-flex;
-  gap: 30px;  
+  gap: 30px;
 }
 
 .nav-links li {
@@ -362,7 +362,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 18px;
-  font-family: "poppins", sans-serif;  
+  font-family: "poppins", sans-serif;
 }
 
 .home-link:hover,
@@ -372,5 +372,121 @@ body {
 }
 
 .details-link {
-    font-size: 18px;
+  font-size: 18px;
+}
+
+/* Service Section */
+.container {
+  display: flex;
+  padding: 40px;
+  margin-top: 5rem;
+}
+
+.services-panel {
+  background: #f7f8f9;
+  padding-top: 15px;
+  padding-left:30px;
+  padding-right:30px;
+  width: 400px;
+  margin-left: 5rem;
+}
+
+.services-panel h2 {
+  margin-bottom: 20px;
+}
+
+.services-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services-panel li {
+  display: flex;
+  align-items: center;
+  padding: 18px 0;  
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e6e7;
+}
+
+.services-panel li:last-child{
+  border-bottom: none;
+}
+
+.services-panel .icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.swiper {
+  width: 55%;
+  overflow: hidden;
+  transform: translateX(-60px);
+}
+
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+.custom-swiper-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-10%);
+  z-index: 1000;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.button-prev {
+  left: 1.5em;
+}
+
+.button-next {
+  right: 1.5em;
+}
+
+.swiper-container:hover .custom-swiper-button {
+  opacity: 1;
+  background-color: #f25c05;
+  color: white;  
+}
+
+.swiper-container:hover .button-prev {
+  transform: translateY(-50%) translateX(-30px); /* Move left */
+}
+
+.swiper-container:hover .button-next {
+  transform: translateY(-50%) translateX(30px); /* Move right */
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #fc5b26;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
 }

@@ -240,10 +240,10 @@ body {
   font-size: 13px;
 }
 
-.nav-links li .arrow {
-  font-size: 12px; /* smaller than the text */
+.nav-links i.fa-angle-down {
+  font-size: 9px;
   margin-left: 5px;
-  vertical-align: middle; /* aligns with the middle of the text */
+  vertical-align: middle;
 }
 
 /* Common styles for all dropdown menus */
